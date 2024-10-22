@@ -19,13 +19,48 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
+def linearSearch(array,n,k):
+    for i in range(0,n):
+        if(array[i]==k):
+            return i
+    return -1
+    
+array=eval(input())
+k=eval(input())
+n=len(array)
+array.sort()
+result=linearSearch(array,n,k)
+if(result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
+def binary(array,key,low,high):
+    while(low<=high):
+        mid=low+(high-low)//2
+        if array[mid]==key:
+            return mid
+        elif array[mid]<key:
+            low=mid+1
+        elif array[mid]>key:
+            high=mid-1
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+low,high=0,len(array)-1
+print(array)
+result=binary(array,key,low,high)
+if result==-1:
+    print("Element not found ")
+else:
+    print("Element found at index: ",result)
 
 
 
@@ -33,7 +68,26 @@ ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
+def binary(array,key,low,high):
+    if high>=low:
+        mid=low+(high-low)//2
+        if array[mid]==key:
+            return mid
+        elif array[mid]<key:
+            return binary(array,key,mid+1,high)
+        elif array[mid]>key:
+            return binary(array,key,low,mid-1)
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+low,high=0,len(array)-1
+print(array)
+result=binary(array,key,low,high)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 
 
 
@@ -41,8 +95,11 @@ iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
 ## Sample Input and Output
 
+![image](https://github.com/user-attachments/assets/68070db1-ef9c-4841-8c61-63fae07d4f4a)
 
+![image](https://github.com/user-attachments/assets/db285aef-369e-49e9-bc51-c4399ac42fef)
 
+![image](https://github.com/user-attachments/assets/383ee5d2-4104-4bbc-9d10-477142b3c9e9)
 
 
 
